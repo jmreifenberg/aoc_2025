@@ -1,5 +1,6 @@
-from src.day01 import SafeDial
+from src.day01.day01 import SafeDial
 from unittest.mock import MagicMock
+from pathlib import Path
 import csv
 
 class TestSafeDial:
@@ -16,7 +17,7 @@ class TestSafeDial:
     
     def test_password_detection(self):
         safeDial = SafeDial()
-        with open('/home/jreifenberg/advent_of_code_2025/day01/test/test_input.txt') as file:
+        with open(Path(__file__).parent / 'test_input.txt') as file:
             reader = csv.reader(file)
             for row in reader:
                 safeDial.rotate(row[0])
